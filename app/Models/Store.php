@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SocialAccount extends Model
+class Store extends Model
 {
     use HasFactory;
     protected $guarded = [];
-
-    public function user()
+    protected $fillable = ['store_social_id'];
+    public function virtual_market()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo('App\Models\VirtualMarket');
     }
 }

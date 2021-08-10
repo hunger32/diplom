@@ -5,11 +5,11 @@
 @endsection
 
 @section('content')
-                <form method="POST" action="{{ route('virtual_markets.store') }}">
+                <form method="POST" action="{{ route('categories.store') }}">
                     @csrf
 
                     <div class="form-group row">
-                        <label for="name" class="col-md-2 col-form-label text-md-right">Virtual market name</label>
+                        <label for="name" class="col-md-2 col-form-label text-md-right">Category name</label>
 
                         <div class="col-md-6">
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -22,12 +22,9 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-12">
-
-                                <a href="{{route('virtual_markets.index')}}">
-                                    <button type="submit" class="btn btn-primary" >
-                                    Create virtual market
-                                    </button>
-                                </a>
+                                <button type="submit" class="btn btn-primary">
+                                    Create category
+                                </button>
                     </div>
                         </div>
                     </div>

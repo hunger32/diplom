@@ -37,6 +37,6 @@ class VkParse extends Command
      */
     public function handle()
     {
-        dd($this->argument('user'));
+        dd($this->argument('vk_id'));
     }
 }

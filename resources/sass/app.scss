@@ -6,3 +6,33 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.app{
+  &-main{
+    margin: 10px auto;
+    padding: 20px;
+    padding-top: 30px;
+  }
+}
+.sidebar{
+  padding-top: 20px;
+}
+.btn{
+  &-panel{
+    margin-right: 20px;
+    color: #FFFFFF;
+    background-color: #2fa360;
+  }
+  &-product{
+    margin-left: 600px;
+  }
+}
+.vm{
+  &-container{
+    display: flex;
+
+  }
+}
+.market-fields__add{
+   margin: 20px;
+}

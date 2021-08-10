@@ -4,24 +4,13 @@
     Virtual markets
 @endsection
 
-@section('side_bar')
-
-    @foreach($virtual_markets as $virtual_market)
-        <li class="nav-item">
-        <a href="/virtual_markets/{{ $virtual_market->id }}">
-            {{ $virtual_market->name }}
-        </a>
-        <div class="linked-stores"></div>
-        </li>
-    @endforeach
-
-@endsection
 
 @section('content')
 
 @foreach($virtual_markets as $virtual_market)
-        <a href="/virtual_markets/{{ $virtual_market->id }}">
-            {{ $virtual_market->name }}
+
+        <a href="/virtual_markets/{{ $virtual_market->id }}/">
+            <div class="vm-container col-3"><div class="vm-name">{{ $virtual_market->name }}</div> </div>
         </a>
         <div class="linked-stores"></div>
 @endforeach

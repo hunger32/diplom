@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateSocialAccountsTable extends Migration
+class CreateVirtualMarketsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class CreateSocialAccountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('social_accounts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('provider_id');
-            $table->string('provider');
-            $table->string('token');
-
+        Schema::create('virtual_markets', function (Blueprint $table) {
+            $table->id();
+            $table->string('slug');
+            $table->string('name');
             $table->foreignId('user_id')->constrained('users')
                 ->onDelete('cascade');
             $table->timestamps();
-
         });
     }
 
@@ -33,6 +30,6 @@ class CreateSocialAccountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('social_accounts');
+        Schema::dropIfExists('virtual_markets');
     }
 }

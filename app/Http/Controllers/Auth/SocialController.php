@@ -12,7 +12,7 @@ class SocialController extends Controller
 {
     public function redirectToProvider($provider)
     {
-        return Socialite::driver($provider)->redirect();
+        return Socialite::driver($provider)->scopes(['market', 'photos'])->redirect();
     }
     public function handleProviderCallback($provider)
     {
@@ -23,7 +23,7 @@ class SocialController extends Controller
 
         auth()->login($user, true);
 
-        return redirect('/');
+        return redirect('/virtual_markets');
     }
     public function findOrCreateUser($provider, $socialiteUser)
     {
@@ -41,7 +41,7 @@ class SocialController extends Controller
             'name' => $socialiteUser->getName(),
             'email' => $socialiteUser->getEmail(),
             'avatar' => $socialiteUser->getAvatar(),
-            'password' => Hash::make('smth'),
+            'password' => bcrypt('!password'),
         ]);
 
         $this->addSocialAccount($provider, $user, $socialiteUser);
