@@ -30,10 +30,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     'vkontakte' => [
+        'url'=> env('VKONTAKTE_API_URL', 'https://api.vk.com/method/'),
         'client_id' => env('VKONTAKTE_CLIENT_ID'),
         'client_secret' => env('VKONTAKTE_CLIENT_SECRET'),
         'redirect' => env('VKONTAKTE_REDIRECT_URI'),
-        'version' => env('VK_API_VERSION')
+        'v' => env('VK_API_V')
     ],
 
 ];
